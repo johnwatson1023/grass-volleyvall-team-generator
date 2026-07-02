@@ -511,15 +511,33 @@ function createCourtGroupsByPriority() {
 }
 
 function selectedPlayersForPriority(positionArray, numberNeeded) {
-    const copiedArray = positionArray.slice();
+    const copiedArray = [];
 
-    shuffleArray(copiedArray);
+    for (let i = 0; i < positionArray.length; i++) {
+        copiedArray.push({
+            player: positionArray[i],
+            randomTieBreaker: Math.random()
+        });
+    }
 
-    copiedArray.sort(function (playerA, playerB) {
-        return playerB.priority - playerA.priority;
+    copiedArray.sort(function (itemA, itemB) {
+        const priorityA = Number(itemA.player.priority);
+        const priorityB = Number(itemB.player.priority);
+
+        if (priorityB !== priorityA) {
+            return priorityB - priorityA;
+        }
+
+        return itemA.randomTieBreaker - itemB.randomTieBreaker;
     });
 
-    return copiedArray.slice(0, numberNeeded);
+    const selectedPlayers = [];
+
+    for (let i = 0; i < numberNeeded && i < copiedArray.length; i++) {
+        selectedPlayers.push(copiedArray[i].player);
+    }
+
+    return selectedPlayers;
 }
 
 function createBestMatchupForCourt(courtPlayers) {
@@ -727,7 +745,7 @@ function updatePrioritiesAfterShuffle(teams) {
     renderPlayers();
     updatePositionGroups();
     savePlayers();
-    saveSittingOut();
+    saveSittingOut(sittingOutData);
 }
 
 function displaySittingOutPlayers(sittingOutPlayers, firstTeamNumber) {
