@@ -1,0 +1,262 @@
+/* Basic reset */
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    margin: 0;
+    padding: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f4f7f3;
+    color: #1f2a1f;
+}
+
+/* Page title */
+h1 {
+    margin: 8px 0 20px;
+    text-align: center;
+    font-size: 1.8rem;
+    color: #1f5f3a;
+}
+
+h2 {
+    margin: 0 0 10px;
+    font-size: 1.25rem;
+    color: #24452f;
+}
+
+h3 {
+    margin: 0 0 10px;
+    color: #1f5f3a;
+}
+
+h4 {
+    margin: 12px 0 6px;
+}
+
+p {
+    margin-top: 0;
+    color: #5a665a;
+}
+
+/* Main Cards*/
+
+.card {
+    background-color: white;
+    border-radius: 16px;
+    padding: 16px;
+    margin-bottom: 18px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+    overflow-x: auto;
+}
+
+/* Inputs / Buttons */
+
+input,
+select,
+button {
+    font: inherit;
+}
+
+input,
+select {
+    width: 100px;
+    padding: 10px 12px;
+    border: 1px solid #c9d6c7;
+    border-radius: 10px;
+    background-color: white;
+    color: #1f2a1f;
+}
+
+input:focus,
+select:focus {
+    outline: 2px solid #91c99c;
+    border-color: #2f7d4f;
+}
+
+button {
+    border: none;
+    border-radius: 10px;
+    padding: 10px 14px;
+    font-weight: 700;
+    background-color: #2f7d4f;
+    color: white;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+button:active {
+    transform: scale(0.97);
+}
+
+.add-row {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 8px;
+    align-items: center;
+}
+
+/* ---------- Position list ---------- */
+
+.position-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 14px;
+}
+
+.position-card {
+    background-color: #f7fbf5;
+    border: 1px solid #d8e5d6;
+    border-radius: 14px;
+    padding: 12px;
+}
+
+/* ---------- Tables ---------- */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+th,
+td {
+    padding: 9px;
+    border-bottom: 1px solid #e1e8df;
+    text-align: left;
+    font-size: 0.9rem;
+}
+
+th {
+    background-color: #dfeee0;
+    color: #24452f;
+    font-weight: 700;
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+.biasSelect {
+    width: 54px;
+    min-width: 54px;
+    padding: 6px
+}
+
+.priorityInput,
+.groupPriorityInput {
+    width: 54px;
+    min-width: 54px;
+    max-width: 54px;
+    padding: 6px;
+    text-align: center;
+}
+
+/* ---------- Remove / delete buttons ---------- */
+
+.removeButton {
+    min-width: 52px;
+    background-color: #d97706;
+    padding: 7px 10px;
+    font-size: 0.85rem;
+}
+
+.deleteButton {
+    min-width: 52px;
+    background-color: #b33a3a;
+    padding: 7px 10px;
+    font-size: 0.85rem;
+}
+
+/* ---------- Shuffle button ---------- */
+
+.shuffle-card {
+    padding: 12px;
+}
+
+#shuffleButton {
+    width: 100%;
+    padding: 15px;
+    font-size: 1.15rem;
+    background-color: #1f5f9f;
+}
+
+/* ---------- Generated teams ---------- */
+
+#teamResults > div {
+    background-color: #f7fbf5;
+    border: 1px solid #d8e5d6;
+    border-radius: 14px;
+    padding: 14px;
+    margin-bottom: 14px;
+}
+
+#teamResults > div:last-child {
+    margin-bottom: 0;
+}
+
+#teamResults h3 {
+    background-color: #dfeee0;
+    padding: 8px 10px;
+    border-radius: 10px;
+    margin-bottom: 12px;
+}
+
+#teamResults h4 {
+    color: #24452f;
+}
+
+/* ---------- Sitting out ---------- */
+
+#sittingOutTableBody td {
+    color: #8a4b00;
+    font-weight: 600;
+}
+
+.sittingTeamHeader td {
+    background-color: #dfeee0;
+    color: #24452f;
+    font-weight: 800;
+    border-top: 8px solid white;
+}
+
+/* ---------- Clear buttons ---------- */
+
+#clearButtons {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+}
+
+#clearButtons button {
+    background-color: #6b7280;
+}
+
+/* ---------- Bigger screens ---------- */
+
+@media (min-width: 700px) {
+    body {
+        max-width: 950px;
+        margin: 0 auto;
+        padding: 28px;
+    }
+
+    h1 {
+        font-size: 2.3rem;
+    }
+
+    .position-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    #clearButtons {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}

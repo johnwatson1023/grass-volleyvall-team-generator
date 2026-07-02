@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Grass Volleyball Team Generator</title>
+
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+        <h1>Grass Volleyball Team Generator</h1>
+
+        <section class="card">
+            <h2>Add Players</h2>
+            <p>Add players without assigning a position</p>
+
+            <div class="add-row">
+                <input type="text" id="playerName" placeholder="Player name">
+
+                <button type="button" id="addPlayerButton">
+                    Add
+                </button>
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>Position List</h2>
+
+            <div id="positionGroups" class="position-grid">
+                <div class="position-card">
+                    <h3>Setter</h3>
+
+                    <div class="add-row">
+                        <input type="text" id="setterNameInput" placeholder="Add setter">
+                        <button type="button" id="addSetterButton">Add</button>
+                    </div>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Pty</th>
+                                <th>Del</th>
+                            </tr>
+                        </thead>
+                        <tbody id="setterTableBody"></tbody>
+                    </table>
+                </div>
+
+                <div class="position-card">
+                    <h3>Outside</h3>
+
+                    <div class="add-row">
+                        <input type="text" id="outsideNameInput" placeholder="Add outside">
+                        <button type="button" id="addOutsideButton">Add</button>
+                    </div>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Pty</th>
+                                <th>Del</th>
+                            </tr>
+                        </thead>
+                        <tbody id="outsideTableBody"></tbody>
+                    </table>
+                </div>
+
+                <div class="position-card">
+                    <h3>Rightside</h3>
+
+                    <div class="add-row">
+                        <input type="text" id="rightsideNameInput" placeholder="Add rightside">
+                        <button type="button" id="addRightsideButton">Add</button>
+                    </div>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Pty</th>
+                                <th>Del</th>
+                            </tr>
+                        </thead>
+                        <tbody id="rightsideTableBody"></tbody>
+                    </table>
+                </div>
+
+                <div class="position-card">
+                    <h3>Middle</h3>
+
+                    <div class="add-row">
+                        <input type="text" id="middleNameInput" placeholder="Add middle">
+                        <button type="button" id="addMiddleButton">Add</button>
+                    </div>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Pty</th>
+                                <th>Del</th>
+                            </tr>
+                        </thead>
+                        <tbody id="middleTableBody"></tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <section class="card shuffle-card">
+            <button type="button" id="shuffleButton">
+                Shuffle Teams
+            </button>
+        </section>
+
+        <section class="card">
+            <h2>Generated Teams</h2>
+            <div id="teamResults"></div>
+        </section>
+
+        <section class="card">
+            <h2>Sitting Out</h2>
+
+            <table>
+                <tbody id="sittingOutTableBody"></tbody>
+            </table>
+        </section>
+
+        <section class="card">
+            <h2>Player List</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Position</th>
+                        <th>Bias</th>
+                        <th>Pty</th>
+                        <th>Del</th>
+                    </tr>
+                </thead>
+
+                <tbody id="playerTableBody"></tbody>
+            </table>
+        </section>
+
+        <section class="card">
+            <h2>Clear Settings</h2>
+
+            <div id="clearButtons">
+                <button type="button" id="clearPositionButton">
+                    Clear Positions
+                </button>
+
+                <button type="button" id="clearBiasButton">
+                    Clear Bias
+                </button>
+
+                <button type="button" id="clearPriorityButton">
+                    Clear Priority
+                </button>
+            </div>
+        </section>
+
+        <script src="script.js"></script>
+    </body>
+
+
+</html>
